@@ -35,11 +35,6 @@ public class Policy {
             inverseJoinColumns = { @JoinColumn(name = "customer_id") })
     @JsonIgnore
     private List<Customer> customers;
-    /*@JsonIgnore
-    @ManyToOne
-    @JoinColumn(referencedColumnName = "customerId")
-    private Customer customer;*/
-
 
 
 

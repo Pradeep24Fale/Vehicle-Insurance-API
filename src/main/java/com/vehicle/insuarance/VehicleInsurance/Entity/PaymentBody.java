@@ -8,7 +8,7 @@ import java.util.List;
 public class PaymentBody {
     private Integer customerId;
     private String accountNumber;
-    private String cardNumber;
+    private String creditCardNumber;
     private Integer cvv;
     private List<Integer> policyList;
 }

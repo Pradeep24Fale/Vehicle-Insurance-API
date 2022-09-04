@@ -1,5 +1,7 @@
 package com.vehicle.insuarance.VehicleInsurance.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,6 +13,7 @@ public class InsuranceProduct {
     private int productId;
     private String productName;
     private String productDetails;
+    @JsonIgnore
     @OneToMany (mappedBy = "insuranceProduct",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Policy> policyList;
 

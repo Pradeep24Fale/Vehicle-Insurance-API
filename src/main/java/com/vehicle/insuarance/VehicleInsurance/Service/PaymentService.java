@@ -34,7 +34,7 @@ public class PaymentService {
             throw new CustomErrorException(HttpStatus.EXPECTATION_FAILED, "Please add body");
         } else {
             Payment payment = paymentRepository.findById(paymentBody.getAccountNumber()).orElseThrow(() -> new CustomErrorException(HttpStatus.NOT_FOUND, "Account Not found"));
-                if(payment.getCreditCardNumber().equalsIgnoreCase(paymentBody.getCardNumber()) && payment.getCvv().equals(paymentBody.getCvv())) {
+                if(payment.getCreditCardNumber().equalsIgnoreCase(paymentBody.getCreditCardNumber()) && payment.getCvv().equals(paymentBody.getCvv())) {
                     Double totalPremium = calculateTotalPremium(paymentBody.getPolicyList());
                     if (payment.getBalance() >= totalPremium) {
                         payment.setBalance(payment.getBalance() - totalPremium);
